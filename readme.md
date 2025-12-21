@@ -1,6 +1,6 @@
 # Magic 8 Watch – Wear OS App
 
-![Magic 8 Watch Logo](/app/src/res/mipmap-hdpi/ic_launcher.png)
+![Magic 8 Watch Logo](/app/src/main/res/mipmap-hdpi/ic_launcher.png)
 
 Magic 8 Watch is a Wear OS application for Android smartwatches that provides fun, randomized answers to yes-or-no questions. Simply tap the screen to receive an answer, just like a classic Magic 8 Ball.
 
