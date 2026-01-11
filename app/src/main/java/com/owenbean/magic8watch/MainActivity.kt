@@ -1,19 +1,27 @@
 package com.owenbean.magic8watch
 
+import android.animation.ObjectAnimator
+import android.os.Build
 import android.os.Bundle
-import android.support.wearable.activity.WearableActivity
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.activity.ComponentActivity
+import androidx.annotation.RequiresApi
 import java.util.*
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.animation.doOnEnd
 
-class MainActivity : WearableActivity() {
+class MainActivity : ComponentActivity() {
     private lateinit var answers: Array<String>
     private lateinit var rotates: Array<Float>
 
+    @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,14 +45,10 @@ class MainActivity : WearableActivity() {
         )
 
 
-        val watchInterface: RelativeLayout =
-            findViewById<RelativeLayout>(R.id.watchInterface)
+        val watchInterface: RelativeLayout = findViewById(R.id.watchInterface)
         watchInterface.setOnClickListener {
             opacityOff()
         }
-
-        // Enables Always-on
-        setAmbientEnabled()
     }
 
     private fun opacityOff() {

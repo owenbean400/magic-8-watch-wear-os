@@ -9,7 +9,7 @@ android {
         minSdkVersion 28
         targetSdkVersion 36
         compileSdkVersion 36
-        versionCode 5
+        versionCode 11
         versionName "1.1"
 
     }
